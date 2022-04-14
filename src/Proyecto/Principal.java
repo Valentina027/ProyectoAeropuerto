@@ -25,7 +25,7 @@ public class Principal {
 
     }
 
-    public static void menu(){
+    public static void menu (){
         int opcion;
 
         do{
@@ -41,8 +41,12 @@ public class Principal {
 
             switch (opcion){
                 case 1: // Ver Aeropuertos gestionados (Publicos o Privados
+                    System.out.println("");
+                    mostrarDatosAeropuertos(aeropuertos);
                     break;
                 case 2: // Ver empresas (Privado) o subvencion (Publico)
+                    System.out.println("");
+                    mostrarPatrocinio(aeropuertos);
                     break;
                 case 3: //Listas compañias de un Aeropuerto
                     break;
@@ -58,4 +62,43 @@ public class Principal {
         }while (opcion!= 6);
     }
 
+    public static void mostrarDatosAeropuertos(Aeropuerto aeropuertos[]){
+        for (int i=0;i<aeropuertos.length;i++){
+            if (aeropuertos [i] instanceof AeropuertoPrivado){
+                System.out.println(" Aeropuerto privado");
+                System.out.println(" Nombre: "+aeropuertos[i].getNombre());
+                System.out.println("Ciudad: "+aeropuertos[i].getCiudad() );
+                System.out.println("Ciudad: "+aeropuertos[i].getPais() );
+            }
+            else{
+                System.out.println(" Aeropuerto publico");
+                System.out.println(" Nombre: "+aeropuertos[i].getNombre());
+                System.out.println("Ciudad: "+aeropuertos[i].getCiudad() );
+                System.out.println("Ciudad: "+aeropuertos[i].getPais() );
+            }
+            System.out.println("");
+        }
+    }
+
+    public static void mostrarPatrocinio(Aeropuerto aeropuertos[]){
+        String empresas [];
+
+        for (int i=0;i<aeropuertos.length;i++){
+            if (aeropuertos [i] instanceof AeropuertoPrivado) {
+                System.out.println("Aeropuerto Privado:" + aeropuertos[i].getNombre());
+                empresas = ((AeropuertoPrivado) aeropuertos[i]).getListaEmpresas();
+                System.out.println("Las empresas son:");
+                for (int j = 0; j < empresas.length; j++) {
+                    System.out.println(empresas[j]);
+
+                }
+            }
+            else{
+                System.out.println("Aeropuerto publico: "+aeropuertos[i].getNombre());
+                System.out.println("Subvencion: "+((AeropuertoPublico)aeropuertos[i]).getSubvencion());
+
+            }
+            System.out.println("");
+        }
+    }
 }

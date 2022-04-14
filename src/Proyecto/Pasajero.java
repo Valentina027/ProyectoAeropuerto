@@ -1,9 +1,7 @@
 package Proyecto;
 
 public class Pasajero {
-    public static void main(String[] args) {
 
-    }
     private String nombre;
     private String pasaporte;
     private String nacionalidad;
