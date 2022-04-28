@@ -2,9 +2,9 @@ package Proyecto;
 
 public class Pasajero {
 
-    private String nombre;
-    private String pasaporte;
-    private String nacionalidad;
+    private final String nombre;
+    private final String pasaporte;
+    private final String nacionalidad;
 
     public Pasajero(String nombre, String pasaporte, String nacionalidad) {
         this.nombre = nombre;

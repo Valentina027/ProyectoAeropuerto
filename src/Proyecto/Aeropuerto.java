@@ -1,10 +1,10 @@
 package Proyecto;
 
 public class Aeropuerto {
-    private String nombre;
-    private String ciudad;
-    private String pais;
-    private Compañia ListaCompañias[] = new Compañia[10];
+    private final String nombre;
+    private final String ciudad;
+    private final String pais;
+    private Compañia[] ListaCompañias = new Compañia[10];
     private int numCompañia;
 
     public Aeropuerto(String nombre, String ciudad, String pais) {
@@ -14,7 +14,7 @@ public class Aeropuerto {
         this.numCompañia =0;
     }
 
-    public Aeropuerto(String nombre, String ciudad, String pais, Compañia c[]) {
+    public Aeropuerto(String nombre, String ciudad, String pais, Compañia[] c) {
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.pais = pais;

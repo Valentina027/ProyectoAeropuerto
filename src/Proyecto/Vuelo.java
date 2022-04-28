@@ -1,14 +1,16 @@
 package Proyecto;
 
+import java.util.Objects;
+
 public class Vuelo {
 
-    private String identificador;
-    private String ciudadOrigen;
-    private String ciudadDestino;
-    private double precio;
-    private int numMaxPasajeros;
+    private final String identificador;
+    private final String ciudadOrigen;
+    private final String ciudadDestino;
+    private final double precio;
+    private final int numMaxPasajeros;
     private int numActualPasajeros;
-    private Pasajero ListaPasajeros[];
+    private final Pasajero[] ListaPasajeros;
 
     public Vuelo(String identificador, String ciudadOrigen, String ciudadDestino, double precio, int numMaxPasajeros) {
         this.identificador = identificador;
@@ -58,7 +60,7 @@ public class Vuelo {
         int i = 0;
         Pasajero pas=null;
         while ((!encontrado)&&(i<ListaPasajeros.length)) {
-            if (pasaporte == ListaPasajeros[i].getPasaporte()){
+            if (Objects.equals(pasaporte, ListaPasajeros[i].getPasaporte())){
                 encontrado = true;
                  pas = ListaPasajeros[i];
          }
